@@ -433,9 +433,9 @@ Copyright (C) 2012 Free Software Foundation, Inc.
 This config.status script is free software; the Free Software Foundation
 gives unlimited permission to copy, distribute and modify it."
 
-ac_pwd='/Users/ariel/LinuxHome/code/darling/src/xar/xar'
+ac_pwd='/Users/build/src/xar/xar'
 srcdir='.'
-INSTALL='./install-sh -c'
+INSTALL='/usr/bin/install -c'
 test -n "$AWK" || AWK=awk
 # The default lists apply if the user does not specify any file.
 ac_need_defaults=:
@@ -605,9 +605,9 @@ S["LTLIBOBJS"]=""
 S["LIBOBJS"]=""
 S["cfgoutputs"]="cfgoutputs.stamp Makefile include/xar.h lib/Makefile.inc lib/libxar.la.in src/Makefile.inc xar.spec"
 S["cfghdrs"]="cfghdrs.stamp include/config.h"
-S["XML2_CONFIG"]="/Users/ariel/LinuxHome/code/darling/src/xar/xar/../../../Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/bin/xml2-config"
-S["EGREP"]="/bin/grep -E"
-S["GREP"]="/bin/grep"
+S["XML2_CONFIG"]="/usr/bin/xml2-config"
+S["EGREP"]="/usr/bin/grep -E"
+S["GREP"]="/usr/bin/grep"
 S["enable_autogen"]="0"
 S["RPATH"]=""
 S["abi"]="macho"
@@ -642,9 +642,9 @@ S["LIBDIR"]="/usr/local/lib"
 S["DATADIR"]="/usr/local/share"
 S["BINDIR"]="/usr/local/bin"
 S["PREFIX"]="/usr/local"
-S["abs_objroot"]="/Users/ariel/LinuxHome/code/darling/src/xar/xar/"
+S["abs_objroot"]="/Users/build/src/xar/xar/"
 S["objroot"]=""
-S["abs_srcroot"]="/Users/ariel/LinuxHome/code/darling/src/xar/xar/"
+S["abs_srcroot"]="/Users/build/src/xar/xar/"
 S["srcroot"]=""
 S["XAR_VERSION"]="1.8dev"
 S["XAR_MINOR_VERSION"]="8dev"
@@ -653,10 +653,11 @@ S["LIB_REV"]="1"
 S["target_alias"]=""
 S["host_alias"]=""
 S["build_alias"]=""
-S["LIBS"]="-lpthread -lbz2 -lz  -lxml2 -lz -lpthread -licucore -lm"
+S["LIBS"]="-lpthread -lbz2 -lz -lxml2 -lz -lpthr"\
+"ead -licucore -lm"
 S["ECHO_T"]=""
-S["ECHO_N"]="-n"
-S["ECHO_C"]=""
+S["ECHO_N"]=""
+S["ECHO_C"]="\\c"
 S["DEFS"]="-DHAVE_CONFIG_H"
 S["mandir"]="${datarootdir}/man"
 S["localedir"]="${datarootdir}/locale"
