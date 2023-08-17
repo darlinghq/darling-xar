@@ -283,6 +283,12 @@ xar_t xar_open_digest_verify(const char *file, int32_t flags, void *expected_toc
 
 		}
 		XAR(ret)->heap_fd = -1;
+#ifdef DARLING
+		// BUG: a recent update to Apple's code introduced a bug because it assumes
+		//      that dirname is always set, even when only reading. to work around this,
+		//      let's always set the dirname.
+		XAR(ret)->dirname = xar_safe_dirname(file);
+#endif
 		inflateInit(&XAR(ret)->zs);
 		if( XAR(ret)->fd < 0 ) {
 			xar_close(ret);
